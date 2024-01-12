@@ -1,0 +1,26 @@
+__pycache__/
+.pytest_cache/
+.vscode/
+Projects/
+doc/build/
+target/
+docs/
+src/
+*.mtl
+.config
+test.py
+
+# Installation related
+dist/
+build/
+envpulse/
+
+# C extensions
+*.so
+*.dat
+*.ini
+*.json
+
+# Local directory
+measured_data/
+temporary_data/
