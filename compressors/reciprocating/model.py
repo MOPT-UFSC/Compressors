@@ -3,7 +3,7 @@ from matplotlib import pyplot as plt
 from pathlib import Path
 import os
 
-from reciprocating.compressor_plots import *
+from compressors.reciprocating.compressor_plots import *
 
 kgf_cm2_to_Pa = 9.80665e4
 bar_to_Pa = 1e5
