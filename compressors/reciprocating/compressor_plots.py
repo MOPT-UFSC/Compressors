@@ -3,7 +3,7 @@ from matplotlib import pyplot as plt
 
 def plot(x, y, x_label, y_label, title, label="", _absolute=False):
 
-    plt.ion()
+    # plt.ion()
 
     fig = plt.figure(figsize=[8,6])
     ax_ = fig.add_subplot(1,1,1)
