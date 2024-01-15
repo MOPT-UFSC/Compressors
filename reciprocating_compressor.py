@@ -1,4 +1,4 @@
-from reciprocating.model import CompressorModel
+from compressors.reciprocating.model import CompressorModel
 
 if __name__ == "__main__":
 
