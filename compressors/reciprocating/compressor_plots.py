@@ -1,11 +1,23 @@
 import numpy as np
-from matplotlib import pyplot as plt
+
+
+def plt():
+    '''
+    Matplotlib imports usually take a long time to run.
+    This is a trick to only import plt when it actually
+    need to be used.
+    The only difference is that now you need to call plt like a function
+    like `plt().plot([1,2,3])` instead of `plt().plot([1,2,3])`
+    '''
+    import matplotlib.pyplot
+    return matplotlib.pyplot
+
 
 def plot(x, y, x_label, y_label, title, label="", _absolute=False):
 
-    # plt.ion()
+    # plt().ion()
 
-    fig = plt.figure(figsize=[8,6])
+    fig = plt().figure(figsize=[8,6])
     ax_ = fig.add_subplot(1,1,1)
 
     if _absolute:
@@ -15,14 +27,14 @@ def plot(x, y, x_label, y_label, title, label="", _absolute=False):
     ax_.set_xlabel(x_label, fontsize = 11, fontweight = 'bold')
     ax_.set_ylabel(y_label, fontsize = 11, fontweight = 'bold')
     ax_.set_title(title, fontsize = 12, fontweight = 'bold')
-    plt.grid()
-    plt.show() 
+    plt().grid()
+    plt().show() 
 
 def plot2(x, y, x_label, y_label, title, labels, colors, linestyles):
 
-    plt.ion()
+    plt().ion()
 
-    fig = plt.figure(figsize=[8,6])
+    fig = plt().figure(figsize=[8,6])
     ax_ = fig.add_subplot(1,1,1)
 
     for i, label in enumerate(labels): 
@@ -31,14 +43,14 @@ def plot2(x, y, x_label, y_label, title, labels, colors, linestyles):
     ax_.set_xlabel(x_label, fontsize = 11, fontweight = 'bold')
     ax_.set_ylabel(y_label, fontsize = 11, fontweight = 'bold')
     ax_.set_title(title, fontsize = 12, fontweight = 'bold')
-    plt.legend()
-    plt.grid()
-    plt.show() 
+    plt().legend()
+    plt().grid()
+    plt().show() 
 
 def plot_2_yaxis(data_to_plot, title):
 
-    plt.ion()
-    fig = plt.figure(figsize=[8,6])
+    plt().ion()
+    fig = plt().figure(figsize=[8,6])
     ax_1 = fig.add_subplot(1,1,1)
     ax_2 = ax_1.twinx()
     
@@ -84,4 +96,4 @@ def plot_2_yaxis(data_to_plot, title):
         ax_1.grid()
         ax_2.grid()
         fig.legend(bbox_to_anchor=(1,1), bbox_transform=ax_1.transAxes)
-        plt.show() 
+        plt().show()
